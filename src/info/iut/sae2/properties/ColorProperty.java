@@ -1,0 +1,61 @@
+package info.iut.sae2.properties;
+
+import info.iut.sae2.graphs.Color;
+import info.iut.sae2.graphs.IEdge;
+import info.iut.sae2.graphs.INode;
+import java.util.Map.Entry;
+
+/**
+ *
+ * @author rbourqui
+ */
+public class ColorProperty extends AbstractProperty<Color, Color> {
+
+    final public static Color DEFAULT_NODE_COL = new Color(255, 0, 0, 255);
+
+    final public static Color DEFAULT_EDGE_COL = new Color(0, 0, 0, 60);
+
+    /**
+     * Default constructor of ColorProperty
+     */
+    public ColorProperty() {
+    }
+
+    /**
+     * Copy constructor. Each value of the given ColorProperty are copied before
+     * being associated to the nodes and edges.
+     *
+     * @param color the ColorProperty to be copied
+     */
+    public ColorProperty(ColorProperty color) {
+        for (Entry e : color.nodesValues.entrySet()) {
+            nodesValues.put((INode) e.getKey(), new Color((Color) e.getValue()));
+        }
+        for (Entry e : color.edgesValues.entrySet()) {
+            edgesValues.put((IEdge) e.getKey(), new Color((Color) e.getValue()));
+        }
+    }
+
+    /**
+     * Sets the given Node Color to the given Color.
+     *
+     * @param n the node to change the Color of
+     * @param col the Color to apply to the Node
+     */
+    @Override
+    public void setNodeValue(INode n, Color col) {
+        nodesValues.put(n, new Color(col));
+    }
+
+    /**
+     * Sets the given Edge Color to the given Color.
+     *
+     * @param e the Edge to change the Color of
+     * @param col the Color to apply to the Edge
+     */
+    @Override
+    public void setEdgeValue(IEdge e, Color col) {
+        edgesValues.put(e, new Color(col));
+    }
+
+}
