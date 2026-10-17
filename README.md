@@ -1,4 +1,5 @@
 # Coloration de Graphes — Exploration Algorithmique (Java)
+*Note : Ce projet a été initialement développé hors de GitHub (instance GitLab interne ou développement local) puis importé ici pour archivage, d'où l'absence d'historique de commits.*
 
 Application Java permettant de charger, visualiser et colorier des graphes à partir de jeux de données CSV. Le projet implémente et compare trois algorithmes classiques de coloration de sommets afin de minimiser le nombre de couleurs utilisées sans que deux sommets adjacents ne partagent la même couleur.
 
