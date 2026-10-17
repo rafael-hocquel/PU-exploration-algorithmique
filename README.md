@@ -1,30 +1,24 @@
-# Exploration algorithmique - coloration de graphes
+# Coloration de Graphes — Exploration Algorithmique (Java)
 
-Application **Java** : l'utilisateur choisis un graphe à afficher, il peut ensuite applique trois algorithmes
-de coloration à ce dernier (Welsh & Powell, 5 et 6 coloration planaire
+Application Java permettant de charger, visualiser et colorier des graphes à partir de jeux de données CSV. Le projet implémente et compare trois algorithmes classiques de coloration de sommets afin de minimiser le nombre de couleurs utilisées sans que deux sommets adjacents ne partagent la même couleur.
 
-**Auteurs :** Rafaël HOCQUEL · Lucas HAMPE GARRIDO  
-**Version :** 1.0 - avril 2026
+## Fonctionnalités et algorithmes
 
-## Ce que fait le programme
-
-| # | Fonction | Réalisation |
-|---|----------|-------------|
-| 1 | Charger un graphe | Lecture des sommets (position) et des arêtes depuis deux fichiers CSV |
-| 2 | Afficher le graphe | Via la classe `GraphLoader` |
-| 3 | Colorier le graphe | Trois algorithmes de coloration (Welsh & Powell, 5 et 6 coloration planaire) |
-| 4 | Vérifier le résultat | Tests unitaires et test d'intégration sur 5 graphes |
+- **Importation et affichage (`GraphLoader`) :** Lecture de la topologie du graphe (coordonnées des sommets et liste des arêtes) depuis deux fichiers CSV distincts, puis rendu graphique à l'écran.
+- **Trois algorithmes de coloration implémentés :**
+  1. **Algorithme de Welsh & Powell :** Approche gloutonne triant les sommets par degré décroissant avant d'attribuer les couleurs.
+  2. **6-coloration planaire :** Algorithme récursif s'appuyant sur la propriété qu'un graphe planaire possède toujours un sommet de degré inférieur ou égal à 5.
+  3. **5-coloration planaire :** Optimisation garantissant la coloration de tout graphe planaire avec au plus 5 couleurs.
+- **Validation et tests :** Suite de tests unitaires et tests d'intégration (sous JUnit 4) validant la conformité des colorations sur un jeu de 5 graphes de référence.
 
 ## Prérequis
 
-- **JDK 21**
-- **NetBeans** (ou Ant) pour lancer l'application
-- **JUnit 4.13.2** et **Hamcrest 1.3** pour les tests, dans `libs/`
+- **Java JDK 21**
+- **Apache Ant** ou **NetBeans**
+- **JUnit 4.13.2** et **Hamcrest 1.3** (archives JAR déjà incluses dans le dossier `libs/`)
 
-## Installation
+## Installation et lancement
 
-```
-bash
+```bash
 git clone https://github.com/rafael-hocquel/PU-exploration-algorithmique.git
 cd PU-exploration-algorithmique
-```
